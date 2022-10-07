@@ -1,0 +1,850 @@
+<div class="main">
+  <div class="sidhuvud">
+    <div class="sektion has-title header">
+      <div class="rad">GRUNDEGENSKAPER</div>
+      <div class="grundegenskaper_rad rad">
+        <div>STYRKA (STY):</div>
+        <div><input name="attr_Sty" type="number" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>FYSIK (FYS):</div>
+        <div><input name="attr_Fys" type="number" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>STORLEK (STO):</div>
+        <div><input name="attr_Sto" type="number" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>SMIDIGHET (SMI):</div>
+        <div><input name="attr_Smi" type="number" value="0" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>INTELLIGENS (INT):</div>
+        <div><input name="attr_Int" type="number" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>VILJA (VIL):</div>
+        <div><input name="attr_Vil" type="number" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad is_last_child_in_section">
+        <div>PERSONLIGHET (PER):</div>
+        <div><input name="attr_Per" type="number" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>SKADEBONUS (SB):</div>
+        <div><input name="attr_sb" type="text" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>INITIATIVBONUS (IB):</div>
+        <div><input name="attr_ib" type="number" value="" /></div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>BÄRFÖRMÅGA (BF):</div>
+        <div>
+          <input
+            name="attr_bf"
+            type="number"
+            value="(@{Sty})"
+            disabled="true"
+          />
+        </div>
+      </div>
+      <div class="grundegenskaper_rad rad">
+        <div>REAKTIONSVÄRDE (REA):</div>
+        <div>
+          <input
+            name="attr_rea"
+            type="number"
+            value="(@{Per}*5)"
+            disabled="true"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="spelar_info sektion">
+      <div class="spelar_info_rad rad">
+        <div>SPELARE:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="spelar_info_rad rad">
+        <div>SPELLEDARE:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="spelar_info_rad rad">
+        <div>NAMN:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="spelar_info_rad rad">
+        <div>KLASS:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="spelar_info_rad rad">
+        <div>TIDIGARE YRKE:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="spelar_info_rad rad">
+        <div>HEMORT:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="karaktars_info_rad rad">
+        <div>ÅLDER:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div>KÖN:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div>LÄNGD:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div>VIKT:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="spelar_info_rad rad is_last_child_in_section">
+        <div>UTSEENDE:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div>
+      <div class="rad is_last_child_in_section"></div>
+      <div class="karaktar_misc_rad rad">
+        <div>RYKTE:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div>FF - STRID:</div>
+        <div>
+          <input
+            name="attr_Ff_strid"
+            type="number"
+            value="(floor((@{Smi}+@{Sto})/5))"
+            disabled="true"
+          />
+        </div>
+        <div>KROPPSPOÄNG (KP):</div>
+        <div class="kroppspoang">
+          <div><input name="attr_Kp" type="number" value="0" /></div>
+          <div>
+            <input
+              name="attr_max_kp"
+              type="number"
+              value="(@{Fys}+@{Sto})"
+              disabled="true"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="karaktar_misc_rad rad">
+        <div>STATUS:</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div>FF - SPRINGA:</div>
+        <div>
+          <input
+            name="attr_Ff_springa"
+            type="number"
+            value="(floor((@{Smi}+@{Sto})/2))"
+            disabled="true"
+          />
+        </div>
+      </div>
+      <div class="karaktar_misc_rad rad">
+        <div></div>
+        <div></div>
+        <div>FF - SPRINT:</div>
+        <div>
+          <input
+            name="attr_Ff_sprint"
+            type="number"
+            value="(floor((@{Smi}+@{Sto})))"
+            disabled="true"
+          />
+        </div>
+        <div>TRAUMATRÖSKEL (TT):</div>
+        <div>
+          <input
+            name="attr_Ff_sprint"
+            type="number"
+            value="(floor((@{Fys}+@{Sto})/2))"
+            disabled="true"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fardigheter">
+    <div class="naturliga_fardigheter sektion has-title">
+      <div class="fardigheter_rad rad">
+        <div class="two_columns">NATURLIGA FÄRDIGHETER</div>
+        <div></div>
+        <div>MOD.FV</div>
+        <div></div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>AKROBATIK</div>
+        <div>
+          <select name="attr_grundegenskap_akrobatik">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}" selected="selected">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_akrobatik">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_akrobatik}*@{tranings_niva_akrobatik})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder AKROBATIK och rullar [[1d100]], mot [[@{grundegenskap_akrobatik}*@{tranings_niva_akrobatik}]]"
+          ></button>
+        </div>
+      </div>
+      <!-- <div class="fardigheter_rad rad">
+        <div>BÅGE</div>
+        <div>
+          <select name="attr_grundegenskap_bage">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}" selected="selected">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_bage">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_bage}*@{tranings_niva_bage})"
+            disabled="true"
+          />
+        </div>
+      </div> -->
+      <div class="fardigheter_rad rad">
+        <div>FÖRSTA HJÄLPEN</div>
+        <div>
+          <select name="attr_grundegenskap_forsta_hjalpen">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}" selected="selected">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_forsta_hjalpen">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_forsta_hjalpen}*@{tranings_niva_forsta_hjalpen})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder FÖRSTA HJÄLPEN och rullar [[1d100]], mot [[@{grundegenskap_forsta_hjalpen}*@{tranings_niva_forsta_hjalpen}]]"
+          ></button>
+        </div>
+      </div>
+      <!-- <div class="fardigheter_rad rad">
+        <div>GEVÄR</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div> -->
+      <div class="fardigheter_rad rad">
+        <div>IAKTAGELSEFÖRMÅGA</div>
+        <div>
+          <select name="attr_grundegenskap_iaktagelseformaga">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}" selected="selected">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_iaktagelseformaga">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_iaktagelseformaga}*@{tranings_niva_iaktagelseformaga})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder IAKTAGELSEFÖRMÅGA och rullar [[1d100]], mot [[@{grundegenskap_iaktagelseformaga}*@{tranings_niva_iaktagelseformaga}]]"
+          ></button>
+        </div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>KASTA</div>
+        <div>
+          <select name="attr_grundegenskap_kasta">
+            <option value="@{Sty}" selected="selected">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_kasta">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_kasta}*@{tranings_niva_kasta})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder KASTA och rullar [[1d100]], mot [[@{grundegenskap_kasta}*@{tranings_niva_kasta}]]"
+          ></button>
+        </div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>KYLA</div>
+        <div>
+          <select name="attr_grundegenskap_kyla">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}" selected="selected">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_kyla">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_kyla}*@{tranings_niva_kyla})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder KYLA och rullar [[1d100]], mot [[@{grundegenskap_kyla}*@{tranings_niva_kyla}]]"
+          ></button>
+        </div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>KÖPSLÅ</div>
+        <div>
+          <select name="attr_grundegenskap_kopsla">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}" selected="selected">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_kopsla">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_kopsla}*@{tranings_niva_kopsla})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder KÖPSLÅ och rullar [[1d100]], mot [[@{grundegenskap_kopsla}*@{tranings_niva_kopsla}]]"
+          ></button>
+        </div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>NÄRSTRID</div>
+        <div>
+          <select name="attr_grundegenskap_narstrid">
+            <option value="@{Sty}" selected="selected">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_narstrid">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_narstrid}*@{tranings_niva_narstrid})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder NÄRSTRID och rullar [[1d100]], mot [[@{grundegenskap_narstrid}*@{tranings_niva_narstrid}]]"
+          ></button>
+        </div>
+      </div>
+      <!-- <div class="fardigheter_rad rad">
+        <div>PISTOL</div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="text" value="" /></div>
+      </div> -->
+      <div class="fardigheter_rad rad">
+        <div>SKJUTVAPEN</div>
+        <div>
+          <select name="attr_grundegenskap_skjutvapen">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}" selected="selected">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_skjutvapen">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_skjutvapen}*@{tranings_niva_skjutvapen})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder SKJUTVAPEN och rullar [[1d100]], mot [[@{grundegenskap_skjutvapen}*@{tranings_niva_skjutvapen}]]"
+          ></button>
+        </div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>SKVALLER</div>
+        <div>
+          <select name="attr_grundegenskap_skvaller">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}" selected="selected">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_skvaller">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_skvaller}*@{tranings_niva_skvaller})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder SKVALLER och rullar [[1d100]], mot [[@{grundegenskap_skvaller}*@{tranings_niva_skvaller}]]"
+          ></button>
+        </div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>SMYGA/GÖMMA SIG</div>
+        <div>
+          <select name="attr_grundegenskap_smyga">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}" selected="selected">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_smyga">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_smyga}*@{tranings_niva_smyga})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder SMYGA/GÖMMA SIG och rullar [[1d100]], mot [[@{grundegenskap_smyga}*@{tranings_niva_smyga}]]"
+          ></button>
+        </div>
+      </div>
+      <div class="fardigheter_rad rad">
+        <div>ÖVERTYGA</div>
+        <div>
+          <select name="attr_grundegenskap_overtyga">
+            <option value="@{Sty}">STY</option>
+            <option value="@{Fys}">FYS</option>
+            <option value="@{Sto}">STO</option>
+            <option value="@{Smi}">SMI</option>
+            <option value="@{Int}">INT</option>
+            <option value="@{Vil}">VIL</option>
+            <option value="@{Per}" selected="selected">PER</option>
+          </select>
+        </div>
+        <div>
+          <select name="attr_tranings_niva_overtyga">
+            <option value="1" selected="selected">X1</option>
+            <option value="2">X2</option>
+            <option value="3">X3</option>
+            <option value="4">X4</option>
+          </select>
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_akrobatik"
+            value="(@{grundegenskap_overtyga}*@{tranings_niva_overtyga})"
+            disabled="true"
+          />
+        </div>
+        <div>
+          <button
+            type="roll"
+            name="roll_asd"
+            value="/em använder ÖVERTYGA och rullar [[1d100]], mot [[@{grundegenskap_overtyga}*@{tranings_niva_overtyga}]]"
+          ></button>
+        </div>
+      </div>
+      <fieldset class="repeating_naturligafardigheter sektion">
+        <div class="fardigheter_rad rad">
+          <div>
+            <input type="text" name="attr_naturligafardigheter-namn" value="" />
+          </div>
+          <div>
+            <select name="attr_grundegenskap-naturligafardigheter">
+              <option value="@{Sty}" selected="selected">STY</option>
+              <option value="@{Fys}">FYS</option>
+              <option value="@{Sto}">STO</option>
+              <option value="@{Smi}">SMI</option>
+              <option value="@{Int}">INT</option>
+              <option value="@{Vil}">VIL</option>
+              <option value="@{Per}">PER</option>
+            </select>
+          </div>
+          <div>
+            <select name="attr_niva-naturligafardigheter">
+              <option value="1" selected="selected">X1</option>
+              <option value="2">X2</option>
+              <option value="3">X3</option>
+              <option value="4">X4</option>
+            </select>
+          </div>
+          <div>
+            <input
+              type="number"
+              name="attr_akrobatik"
+              value="(@{grundegenskap-naturligafardigheter}*@{niva-naturligafardigheter})"
+              disabled="true"
+            />
+          </div>
+          <div>
+            <button
+              type="roll"
+              name="roll_skill"
+              value="/em använder @{naturligafardigheter-namn} och rullar [[1d100]], mot [[@{grundegenskap-naturligafardigheter}*@{niva-naturligafardigheter}]]"
+            ></button>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="naturliga_fardigheter sektion has-title">
+      <div class="fardigheter_rad rad">
+        <div class="two_columns">TRÄNADE FÄRDIGHETER</div>
+        <div></div>
+        <div>MOD.FV</div>
+        <div></div>
+      </div>
+      <fieldset class="repeating_tranadefardigheter">
+        <div class="fardigheter_rad rad">
+          <div>
+            <input type="text" name="attr_tranadefardigheter-namn" value="" />
+          </div>
+          <div>
+            <select name="attr_grundegenskap-tranadefardigheter">
+              <option value="@{Sty}" selected="selected">STY</option>
+              <option value="@{Fys}">FYS</option>
+              <option value="@{Sto}">STO</option>
+              <option value="@{Smi}">SMI</option>
+              <option value="@{Int}">INT</option>
+              <option value="@{Vil}">VIL</option>
+              <option value="@{Per}">PER</option>
+            </select>
+          </div>
+          <div>
+            <select name="attr_niva-tranadefardigheter">
+              <option value="1" selected="selected">X1</option>
+              <option value="2">X2</option>
+              <option value="3">X3</option>
+              <option value="4">X4</option>
+            </select>
+          </div>
+          <div>
+            <input
+              type="number"
+              name="attr_akrobatik"
+              value="(@{grundegenskap-tranadefardigheter}*@{niva-tranadefardigheter})"
+              disabled="true"
+            />
+          </div>
+          <div>
+            <button
+              type="roll"
+              name="roll_skill"
+              value="/em använder @{tranadefardigheter-namn} och rullar [[1d100]], mot [[@{grundegenskap-tranadefardigheter}*@{niva-tranadefardigheter}]]"
+            ></button>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="vapen sektion has-title">
+    <div class="vapen_rad rad">
+      <div>VAPEN</div>
+      <div>FATTN</div>
+      <div>INIT</div>
+      <div>SKADA</div>
+      <div>PEN</div>
+      <div>RÄCKVIDD</div>
+      <div>TÅL</div>
+      <div>PÅL/MAX</div>
+      <div>VIKT</div>
+      <div>AMMO/MAX</div>
+    </div>
+    <fieldset class="repeating_vapen">
+      <div class="vapen_rad rad">
+        <div><input type="text" name="attr_vapen_name" value="" /></div>
+        <div><input type="text" name="attr_vapen_fattn" value="" /></div>
+        <div><input type="text" name="attr_vapen_init" value="" /></div>
+        <div><input type="text" name="attr_skadetyp" class="dtype" /></div>
+        <div><input type="text" name="attr_vapen_pen" value="" /></div>
+        <div><input type="text" name="attr_vapen_rackvidd" value="" /></div>
+        <div><input type="text" name="attr_vapen_tål" value="" /></div>
+        <div><input type="text" name="attr_vapen_pål" value="" /></div>
+        <div><input type="text" name="attr_vapen_vikt" value="" /></div>
+        <div><input type="text" name="attr_vapen_ammo" value="" /></div>
+        <div>
+          <button
+            type="roll"
+            name="roll_skill"
+            value="/em använder @{vapen_name} och rullar [[@{skadetyp}]], träffar i [[1d6]]"
+          ></button>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="formagor sektion has-title">
+    <div class="formagor_rad rad">
+      <div>FÖRMÅGOR</div>
+      <div>BESKRIVNING</div>
+    </div>
+    <fieldset class="repeating_formagor">
+      <div class="formagor_rad rad">
+        <div><input type="text" name="attr_formaga_namn" value="" /></div>
+        <div>
+          <input type="text" name="attr_formaga_beskrivning" value="" />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="saker">
+    <div class="utrustning sektion has-title">
+      <div class="utrustning_rad rad">
+        <div>UTRUSTNING</div>
+        <div>VIKT</div>
+      </div>
+      <fieldset class="repeating_utrustning">
+        <div class="utrustning_rad rad">
+          <div><input name="attr_utrustning" type="text" value="" /></div>
+          <div>
+            <input name="attr_utrustning_vikt" type="number" value="" />
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="rustning_och_pengar sektion has-title">
+      <div class="rustning_rad rad">
+        <div>RUSTNING</div>
+        <div>ABS</div>
+        <div>BEG</div>
+        <div>VIKT</div>
+      </div>
+      <div class="rustning_rad rad">
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="rustning_rad rad">
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="rustning_rad rad">
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="rustning_rad rad">
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="rustning_rad rad">
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="rustning_rad rad is_last_child_in_section">
+        <div><input name="attr_spelare" type="text" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="rad is_last_child_in_section"></div>
+      <div
+        class="pengar_rad rad is_last_child_in_section inline-header-override"
+      >
+        <div>PENGAR</div>
+        <div>BURET</div>
+        <div>FÖRVAR</div>
+      </div>
+      <div class="pengar_rad rad">
+        <div>KRONKREDIT:</div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="pengar_rad rad">
+        <div>KREDIT:</div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+      <div class="pengar_rad rad">
+        <div>JYCKE:</div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+        <div><input name="attr_spelare" type="number" value="" /></div>
+      </div>
+    </div>
+  </div>
+  <div class="övrigt sektion has-title">
+    <div>ÖVRIGT</div>
+    <div><textarea name="attr_notes" value=""></textarea></div>
+  </div>
+  <div>Av Jens H., 2022</div>
+</div>

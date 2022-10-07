@@ -1,0 +1,205 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.sidhuvud {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-column-gap: 1rem;
+}
+
+.grundegenskaper {
+  display: flex;
+  flex-direction: column;
+}
+
+.rad {
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.rad > div:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+.grundegenskaper_rad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.spelar_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.spelar_info_rad {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+}
+
+.karaktars_info_rad {
+  display: grid;
+  grid-template-columns: 10rem 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.karaktar_misc_rad {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 1fr 3fr 1fr;
+}
+
+.kroppspoang {
+  display: flex;
+  flex-direction: row;
+}
+
+.fardigheter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+}
+
+.fardigheter_rad {
+  display: grid;
+  grid-template-columns: 4fr 2fr 2fr 2fr 1fr;
+}
+
+.vapen_rad {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.formagor_rad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.saker {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-column-gap: 1rem;
+}
+
+.utrustning_rad {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+
+.utrustning_rad_upprepbar {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+
+.rustning_rad {
+  display: grid;
+  grid-template-columns: 4fr 2fr 2fr 2fr;
+}
+
+.pengar_rad {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+/* LINES */
+
+.sektion {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.has-title > div:first-child {
+  border-bottom: 2px solid black !important;
+}
+
+.has-title > div:first-child > div {
+  border-right: none !important;
+}
+
+.sektion > div:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.sektion > .repcontainer > div:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.is_last_child_in_section {
+  border-bottom: 2px solid black !important;
+}
+
+.inline-header-override > div {
+  border-right: none !important;
+}
+
+/* GENERAL */
+
+input {
+  width: 100% !important;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+}
+
+input:disabled {
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+select {
+  width: 100%;
+}
+
+.two_columns {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+textarea {
+  background-image: none;
+  background-color: white;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* OVERRIDES */
+
+.repcontainer {
+  border: none !important;
+}
+
+.btn {
+  background-image: none;
+  background-color: white;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: white;
+}
