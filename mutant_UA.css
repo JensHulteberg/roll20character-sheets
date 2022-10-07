@@ -28,13 +28,17 @@
 }
 
 .rad {
-  height: 3rem;
+  min-height: 3rem;
   line-height: 3rem;
   text-align: left;
 }
 
 .rad > div {
   padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rad > div:not(:last-child) {
@@ -63,7 +67,7 @@
 
 .karaktar_misc_rad {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr 1fr 3fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr 1fr 3fr 1fr;
 }
 
 .kroppspoang {
@@ -79,12 +83,12 @@
 
 .fardigheter_rad {
   display: grid;
-  grid-template-columns: 4fr 2fr 2fr 2fr 1fr;
+  grid-template-columns: 4fr 2fr 2fr 1fr 1fr 1fr;
 }
 
 .vapen_rad {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .formagor_rad {
@@ -184,6 +188,7 @@ select {
   width: 100%;
   border: none;
   outline: none;
+  margin: 0;
 }
 
 .two_columns {
@@ -197,6 +202,7 @@ textarea {
   border: none;
   outline: none;
   box-shadow: none;
+  resize: none;
 }
 
 /* OVERRIDES */

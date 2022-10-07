@@ -1,7 +1,7 @@
 <div class="main">
   <div class="header-image">
     <img
-      src="https://raw.githubusercontent.com/JensHulteberg/roll20character-sheets/main/images/logo.PNG?token=GHSAT0AAAAAABY6TCZD5YYDHXNU34FPT6SWY2AB4EA"
+      src="https://raw.githubusercontent.com/JensHulteberg/roll20character-sheets/main/images/logo.PNG"
     />
   </div>
   <div class="sidhuvud">
@@ -21,7 +21,7 @@
       </div>
       <div class="grundegenskaper_rad rad">
         <div>SMIDIGHET (SMI):</div>
-        <div><input name="attr_Smi" type="number" value="0" /></div>
+        <div><input name="attr_Smi" type="number" value="" /></div>
       </div>
       <div class="grundegenskaper_rad rad">
         <div>INTELLIGENS (INT):</div>
@@ -109,7 +109,7 @@
       <div class="karaktar_misc_rad rad">
         <div>RYKTE:</div>
         <div><input type="text" value="" name="attr_rykte" /></div>
-        <div>FF - STRID:</div>
+        <div>GÅNG:</div>
         <div>
           <input
             name="attr_Ff_strid"
@@ -136,7 +136,7 @@
       <div class="karaktar_misc_rad rad">
         <div>STATUS:</div>
         <div><input type="text" value="" name="attr_status" /></div>
-        <div>FF - SPRINGA:</div>
+        <div>SPRING:</div>
         <div>
           <input
             name="attr_Ff_springa"
@@ -149,7 +149,7 @@
       <div class="karaktar_misc_rad rad">
         <div></div>
         <div></div>
-        <div>FF - SPRINT:</div>
+        <div>SPRINT:</div>
         <div>
           <input
             name="attr_Ff_sprint"
@@ -175,7 +175,8 @@
       <div class="fardigheter_rad rad">
         <div class="two_columns">NATURLIGA FÄRDIGHETER</div>
         <div></div>
-        <div>MOD.FV</div>
+        <div>ERF</div>
+        <div>FV</div>
         <div></div>
       </div>
       <div class="fardigheter_rad rad">
@@ -193,17 +194,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_akrobatik">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_akrobatik" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_akrobatik}*@{tranings_niva_akrobatik})"
+            name="attr_akrobatik_fv"
+            value="((@{grundegenskap_akrobatik}*@{tranings_niva_akrobatik})+@{avancering_akrobatik})"
             disabled="true"
           />
         </div>
@@ -211,40 +216,10 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder AKROBATIK och rullar [[1d100]], mot [[@{grundegenskap_akrobatik}*@{tranings_niva_akrobatik}]]"
+            value="använder AKROBATIK och rullar [[1d100]], mot [[@{akrobatik_fv}]]"
           ></button>
         </div>
       </div>
-      <!-- <div class="fardigheter_rad rad">
-        <div>BÅGE</div>
-        <div>
-          <select name="attr_grundegenskap_bage">
-            <option value="@{Sty}">STY</option>
-            <option value="@{Fys}">FYS</option>
-            <option value="@{Sto}">STO</option>
-            <option value="@{Smi}" selected="selected">SMI</option>
-            <option value="@{Int}">INT</option>
-            <option value="@{Vil}">VIL</option>
-            <option value="@{Per}">PER</option>
-          </select>
-        </div>
-        <div>
-          <select name="attr_tranings_niva_bage">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
-          </select>
-        </div>
-        <div>
-          <input
-            type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_bage}*@{tranings_niva_bage})"
-            disabled="true"
-          />
-        </div>
-      </div> -->
       <div class="fardigheter_rad rad">
         <div>FÖRSTA HJÄLPEN</div>
         <div>
@@ -260,17 +235,25 @@
         </div>
         <div>
           <select name="attr_tranings_niva_forsta_hjalpen">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_forsta_hjalpen}*@{tranings_niva_forsta_hjalpen})"
+            name="attr_avancering_forsta_hjalpen"
+            value="0"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_forsta_hjalpen_fv"
+            value="((@{grundegenskap_forsta_hjalpen}*@{tranings_niva_forsta_hjalpen})+@{avancering_forsta_hjalpen})"
             disabled="true"
           />
         </div>
@@ -278,15 +261,10 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder FÖRSTA HJÄLPEN och rullar [[1d100]], mot [[@{grundegenskap_forsta_hjalpen}*@{tranings_niva_forsta_hjalpen}]]"
+            value="använder FÖRSTA HJÄLPEN och rullar [[1d100]], mot [[@{forsta_hjalpen_fv}]]"
           ></button>
         </div>
       </div>
-      <!-- <div class="fardigheter_rad rad">
-        <div>GEVÄR</div>
-        <div><input  type="text" value="" /></div>
-        <div><input  type="text" value="" /></div>
-      </div> -->
       <div class="fardigheter_rad rad">
         <div>IAKTAGELSEFÖRMÅGA</div>
         <div>
@@ -302,17 +280,25 @@
         </div>
         <div>
           <select name="attr_tranings_niva_iaktagelseformaga">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_iaktagelseformaga}*@{tranings_niva_iaktagelseformaga})"
+            name="attr_avancering_iaktagelseformaga"
+            value="0"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            name="attr_iaktagelseformaga_fv"
+            value="((@{grundegenskap_iaktagelseformaga}*@{tranings_niva_iaktagelseformaga})+@{avancering_iaktagelseformaga})"
             disabled="true"
           />
         </div>
@@ -320,7 +306,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder IAKTAGELSEFÖRMÅGA och rullar [[1d100]], mot [[@{grundegenskap_iaktagelseformaga}*@{tranings_niva_iaktagelseformaga}]]"
+            value="använder IAKTAGELSEFÖRMÅGA och rullar [[1d100]], mot [[@{iaktagelseformaga_fv}]]"
           ></button>
         </div>
       </div>
@@ -339,17 +325,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_kasta">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_kasta" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_kasta}*@{tranings_niva_kasta})"
+            name="attr_kasta_fv"
+            value="((@{grundegenskap_kasta}*@{tranings_niva_kasta})+@{avancering_kasta})"
             disabled="true"
           />
         </div>
@@ -357,7 +347,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder KASTA och rullar [[1d100]], mot [[@{grundegenskap_kasta}*@{tranings_niva_kasta}]]"
+            value="använder KASTA och rullar [[1d100]], mot [[@{kasta_fv}]]"
           ></button>
         </div>
       </div>
@@ -376,17 +366,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_kyla">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_kyla" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_kyla}*@{tranings_niva_kyla})"
+            name="attr_kyla_fv"
+            value="((@{grundegenskap_kyla}*@{tranings_niva_kyla})+@{avancering_kyla})"
             disabled="true"
           />
         </div>
@@ -394,7 +388,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder KYLA och rullar [[1d100]], mot [[@{grundegenskap_kyla}*@{tranings_niva_kyla}]]"
+            value="använder KYLA och rullar [[1d100]], mot [[@{kyla_fv}]]"
           ></button>
         </div>
       </div>
@@ -413,17 +407,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_kopsla">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_kopsla" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_kopsla}*@{tranings_niva_kopsla})"
+            name="attr_kopsla_fv"
+            value="((@{grundegenskap_kopsla}*@{tranings_niva_kopsla})+@{avancering_kopsla})"
             disabled="true"
           />
         </div>
@@ -431,7 +429,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder KÖPSLÅ och rullar [[1d100]], mot [[@{grundegenskap_kopsla}*@{tranings_niva_kopsla}]]"
+            value="använder KÖPSLÅ och rullar [[1d100]], mot [[@{kopsla_fv}]]"
           ></button>
         </div>
       </div>
@@ -450,17 +448,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_narstrid">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_narstrid" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_narstrid}*@{tranings_niva_narstrid})"
+            name="attr_narstrid_fv"
+            value="((@{grundegenskap_narstrid}*@{tranings_niva_narstrid})+@{avancering_narstrid})"
             disabled="true"
           />
         </div>
@@ -468,15 +470,10 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder NÄRSTRID och rullar [[1d100]], mot [[@{grundegenskap_narstrid}*@{tranings_niva_narstrid}]]"
+            value="använder NÄRSTRID och rullar [[1d100]], mot [[@{narstrid_fv}]]"
           ></button>
         </div>
       </div>
-      <!-- <div class="fardigheter_rad rad">
-        <div>PISTOL</div>
-        <div><input  type="text" value="" /></div>
-        <div><input  type="text" value="" /></div>
-      </div> -->
       <div class="fardigheter_rad rad">
         <div>SKJUTVAPEN</div>
         <div>
@@ -492,17 +489,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_skjutvapen">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_skjutvapen" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_skjutvapen}*@{tranings_niva_skjutvapen})"
+            name="attr_skjutvapen_fv"
+            value="((@{grundegenskap_skjutvapen}*@{tranings_niva_skjutvapen})+@{avancering_skjutvapen})"
             disabled="true"
           />
         </div>
@@ -510,7 +511,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder SKJUTVAPEN och rullar [[1d100]], mot [[@{grundegenskap_skjutvapen}*@{tranings_niva_skjutvapen}]]"
+            value="/em använder SKJUTVAPEN och rullar [[1d100]], mot [[@{skjutvapen_fv}]]"
           ></button>
         </div>
       </div>
@@ -529,17 +530,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_skvaller">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_skvaller" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_skvaller}*@{tranings_niva_skvaller})"
+            name="attr_skvaller_fv"
+            value="((@{grundegenskap_skvaller}*@{tranings_niva_skvaller})+@{avancering_skvaller})"
             disabled="true"
           />
         </div>
@@ -547,7 +552,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder SKVALLER och rullar [[1d100]], mot [[@{grundegenskap_skvaller}*@{tranings_niva_skvaller}]]"
+            value="använder SKVALLER och rullar [[1d100]], mot [[@{skvaller_fv}]]"
           ></button>
         </div>
       </div>
@@ -566,17 +571,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_smyga">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_smyga" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_smyga}*@{tranings_niva_smyga})"
+            name="attr_smyga_fv"
+            value="((@{grundegenskap_smyga}*@{tranings_niva_smyga})+@{avancering_smyga})"
             disabled="true"
           />
         </div>
@@ -584,7 +593,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder SMYGA/GÖMMA SIG och rullar [[1d100]], mot [[@{grundegenskap_smyga}*@{tranings_niva_smyga}]]"
+            value="/em använder SMYGA/GÖMMA SIG och rullar [[1d100]], mot [[@{smyga_fv}]]"
           ></button>
         </div>
       </div>
@@ -603,17 +612,21 @@
         </div>
         <div>
           <select name="attr_tranings_niva_overtyga">
-            <option value="1" selected="selected">X1</option>
-            <option value="2">X2</option>
-            <option value="3">X3</option>
-            <option value="4">X4</option>
+            <option value="0">Okunnig</option>
+            <option value="1" selected="selected">Novis</option>
+            <option value="2">Tränad</option>
+            <option value="3">Expert</option>
+            <option value="4">Mästare</option>
           </select>
+        </div>
+        <div>
+          <input type="number" name="attr_avancering_overtyga" value="0" />
         </div>
         <div>
           <input
             type="number"
-            name="attr_akrobatik"
-            value="(@{grundegenskap_overtyga}*@{tranings_niva_overtyga})"
+            name="attr_overtyga_fv"
+            value="((@{grundegenskap_overtyga}*@{tranings_niva_overtyga})+@{avancering_overtyga})"
             disabled="true"
           />
         </div>
@@ -621,7 +634,7 @@
           <button
             type="roll"
             name="roll_asd"
-            value="/em använder ÖVERTYGA och rullar [[1d100]], mot [[@{grundegenskap_overtyga}*@{tranings_niva_overtyga}]]"
+            value="använder ÖVERTYGA och rullar [[1d100]], mot [[@{overtyga_fv}]]"
           ></button>
         </div>
       </div>
@@ -643,17 +656,25 @@
           </div>
           <div>
             <select name="attr_niva-naturligafardigheter">
-              <option value="1" selected="selected">X1</option>
-              <option value="2">X2</option>
-              <option value="3">X3</option>
-              <option value="4">X4</option>
+              <option value="0">Okunnig</option>
+              <option value="1" selected="selected">Novis</option>
+              <option value="2">Tränad</option>
+              <option value="3">Expert</option>
+              <option value="4">Mästare</option>
             </select>
           </div>
           <div>
             <input
               type="number"
-              name="attr_akrobatik"
-              value="(@{grundegenskap-naturligafardigheter}*@{niva-naturligafardigheter})"
+              name="attr_avancering-naturligafardigheter"
+              value="0"
+            />
+          </div>
+          <div>
+            <input
+              type="number"
+              name="attr_naturligafardigheter-fv"
+              value="((@{grundegenskap-naturligafardigheter}*@{niva-naturligafardigheter})+@{avancering-naturligafardigheter})"
               disabled="true"
             />
           </div>
@@ -661,7 +682,7 @@
             <button
               type="roll"
               name="roll_skill"
-              value="/em använder @{naturligafardigheter-namn} och rullar [[1d100]], mot [[@{grundegenskap-naturligafardigheter}*@{niva-naturligafardigheter}]]"
+              value="använder @{naturligafardigheter-namn} och rullar [[1d100]], mot [[@{naturligafardigheter-fv}]]"
             ></button>
           </div>
         </div>
@@ -671,7 +692,8 @@
       <div class="fardigheter_rad rad">
         <div class="two_columns">TRÄNADE FÄRDIGHETER</div>
         <div></div>
-        <div>MOD.FV</div>
+        <div>ERF</div>
+        <div>FV</div>
         <div></div>
       </div>
       <fieldset class="repeating_tranadefardigheter">
@@ -692,17 +714,25 @@
           </div>
           <div>
             <select name="attr_niva-tranadefardigheter">
-              <option value="1" selected="selected">X1</option>
-              <option value="2">X2</option>
-              <option value="3">X3</option>
-              <option value="4">X4</option>
+              <option value="0" selected="selected">Okunnig</option>
+              <option value="1">Novis</option>
+              <option value="2">Tränad</option>
+              <option value="3">Expert</option>
+              <option value="4">Mästare</option>
             </select>
           </div>
           <div>
             <input
               type="number"
-              name="attr_akrobatik"
-              value="(@{grundegenskap-tranadefardigheter}*@{niva-tranadefardigheter})"
+              name="attr_avancering-tranadefardigheter"
+              value="0"
+            />
+          </div>
+          <div>
+            <input
+              type="number"
+              name="attr_tranadefardigheter-fv"
+              value="((@{grundegenskap-tranadefardigheter}*@{niva-tranadefardigheter})+@{avancering-tranadefardigheter})"
               disabled="true"
             />
           </div>
@@ -710,7 +740,7 @@
             <button
               type="roll"
               name="roll_skill"
-              value="/em använder @{tranadefardigheter-namn} och rullar [[1d100]], mot [[@{grundegenskap-tranadefardigheter}*@{niva-tranadefardigheter}]]"
+              value="använder @{tranadefardigheter-namn} och rullar [[1d100]], mot [[@{tranadefardigheter-fv}]]"
             ></button>
           </div>
         </div>
@@ -742,11 +772,15 @@
         <div><input type="text" name="attr_vapen_pal" value="" /></div>
         <div><input type="text" name="attr_vapen_vikt" value="" /></div>
         <div><input type="text" name="attr_vapen_ammo" value="" /></div>
+        <select name="attr_vapen_anvstand">
+          <option value="@{sb}" selected="selected">Närstrid</option>
+          <option value="1d0" selected="selected">Avstånd</option>
+        </select>
         <div>
           <button
             type="roll"
             name="roll_skill"
-            value="/em använder @{vapen_name} och rullar [[@{skadetyp}]], träffar i [[1d6]]"
+            value="använder @{vapen_name} och rullar [[@{skadetyp}+@{vapen_anvstand}]], träffar i [[1d6]]"
           ></button>
         </div>
       </div>
