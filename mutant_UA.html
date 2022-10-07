@@ -40,9 +40,18 @@
           <div>SKADEBONUS (SB):</div>
           <div><input name="attr_sb" type="text" value="" /></div>
         </div>
-        <div class="grundegenskaper_rad rad">
+        <div class="initativbonus_rad rad">
           <div>INITIATIVBONUS (IB):</div>
-          <div><input name="attr_ib" type="number" value="" /></div>
+          <div>
+            <input name="attr_ib" type="number" value="" />
+          </div>
+          <div>
+            <button
+              type="roll"
+              name="roll_asd"
+              value="/me %NEWLINE% INITIATIV %NEWLINE% %NEWLINE% [[@{ib}+1d10]]"
+            ></button>
+          </div>
         </div>
         <div class="grundegenskaper_rad rad">
           <div>BÄRFÖRMÅGA (BF):</div>
@@ -895,7 +904,7 @@
     </div>
     <div class="övrigt sektion has-title">
       <div class="rad">ÖVRIGT</div>
-      <div class="rad"><textarea name="attr_ovrigt" value=""></textarea></div>
+      <textarea name="attr_ovrigt" value=""></textarea>
     </div>
     <div>Revidering och karaktärsblad av Jens H., 2022</div>
   </div>

@@ -65,6 +65,11 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.initativbonus_rad {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
 .spelar_info {
   display: flex;
   flex-direction: column;
@@ -218,6 +223,7 @@ textarea {
   outline: none;
   box-shadow: none;
   resize: none;
+  padding: 0;
 }
 
 /* OVERRIDES */
